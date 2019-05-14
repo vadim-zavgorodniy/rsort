@@ -2,7 +2,11 @@
 
 Rsort is a simple library for adding sorting in RESTful APIs.
 
-Sample:
+Sorting criteria format: `fieldName1:SortOrder,fieldName2:SortOrder`
+
+Sample: `name:ASC,age:DESC`
+
+Usage:
 
 ```java
 @GET
