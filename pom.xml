@@ -14,6 +14,33 @@
     <url>https://github.com/vadim-zavgorodniy/rsort</url>
     <inceptionYear>2018</inceptionYear>
 
+    <developers>
+        <developer>
+            <name>Vadim Zavgorodniy</name>
+            <email>iwarmouse@gmail.com</email>
+            <organization>Inspark in Moscow</organization>
+            <organizationUrl>https://www.inspark.ru</organizationUrl>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>http://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/vadim-zavgorodniy/rsort</url>
+        <connection>scm:git:git@github.com:vadim-zavgorodniy/rsort.git</connection>
+    </scm>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/vadim-zavgorodniy/rsort/issues</url>
+    </issueManagement>
+
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -23,6 +50,18 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.7.22</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.8.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -80,6 +119,26 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- JaCoCo plugin -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
 
         <pluginManagement>
@@ -102,33 +161,14 @@
 
     <reporting>
         <plugins>
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-checkstyle-plugin</artifactId>-->
-                <!--<version>3.0.0</version>-->
-                <!--<configuration>-->
-                    <!--<configLocation>/checkstyle/checkstyle.xml</configLocation>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-pmd-plugin</artifactId>-->
-                <!--<version>3.12.0</version>-->
-                <!--<configuration>-->
-                    <!--<linkXref>true</linkXref>-->
-                    <!--<printFailingErrors>true</printFailingErrors>-->
-                    <!--<sourceEncoding>utf-8</sourceEncoding>-->
-                    <!--<minimumTokens>100</minimumTokens>-->
-                    <!--<targetJdk>1.8</targetJdk>-->
-                    <!--<rulesets>-->
-                        <!--<ruleset>${project.basedir}/src/main/resources/pmd/rsort.xml</ruleset>-->
-                    <!--</rulesets>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
                 <version>2.3</version>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </reporting>
