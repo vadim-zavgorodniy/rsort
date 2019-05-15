@@ -7,6 +7,8 @@ Rsort is a simple library for adding sorting in RESTful APIs.
 
 Sorting criteria format: `fieldName1:SortOrder,fieldName2:SortOrder`
 
+SortOrder can be *ASC* for ascending ao *DESC* for descending sorting. 
+
 Sample: `name:ASC,age:DESC`
 
 Usage:
