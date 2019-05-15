@@ -1,5 +1,8 @@
 # Rsort
 
+[![Build Status](https://travis-ci.org/vadim-zavgorodniy/rsort.svg?branch=develop)](https://travis-ci.org/vadim-zavgorodniy/rsort)
+[![codecov](https://codecov.io/gh/vadim-zavgorodniy/rsort/branch/develop/graph/badge.svg)](https://codecov.io/gh/vadim-zavgorodniy/rsort)
+
 Rsort is a simple library for adding sorting in RESTful APIs.
 
 Sorting criteria format: `fieldName1:SortOrder,fieldName2:SortOrder`
